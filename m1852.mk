@@ -275,8 +275,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service \
-    com.android.future.usb.accessory
+    android.hardware.usb@1.0-service
 
 # VNDK-SP
 PRODUCT_PACKAGES += \
