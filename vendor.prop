@@ -147,3 +147,6 @@ persist.thermalconfig.mid=/vendor/etc/thermal.mid.conf
 persist.thermalconfig.powersave=/vendor/etc/thermal.low.conf
 persist.thermalengine.platform=qualcomm
 persist.thermalmanager.enable=true
+
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
