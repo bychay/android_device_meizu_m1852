@@ -150,3 +150,6 @@ persist.thermalmanager.enable=true
 
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
+
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
