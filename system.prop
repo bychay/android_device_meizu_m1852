@@ -240,3 +240,6 @@ ro.diag.enc_wechat_key=1
 #Huaqin add for 819778 by chenqiang at 20180831 start
 vendor.audio.adm.buffering.ms=3
 #Huaqin add for 819778 by chenqiang at 20180831 end
+
+# Doze
+ro.sensor.proximity=true
