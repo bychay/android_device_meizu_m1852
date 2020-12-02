@@ -59,6 +59,14 @@ if [ -z "${SRC}" ]; then
     SRC=adb
 fi
 
+function blob_fixup() {
+    case "${1}" in
+    vendor/lib/hw/camera.qcom.so)
+        sed -i "s|libssc.so|libSSc.so|g" "${2}"
+        ;;
+    esac
+}
+
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
 
