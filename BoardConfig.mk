@@ -77,6 +77,9 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_LD_SHIM_LIBS += /vendor/lib/libmms_hal_vstab.so|/vendor/lib/libshim_camera.so
 TARGET_LD_SHIM_LIBS += /vendor/lib/libmms_warper_vstab.so|/vendor/lib/libshim_camera.so
 
+# Fingerprint
+TARGET_LD_SHIM_LIBS += /vendor/lib64/hw/cdfinger.fingerprint.default.so|/vendor/lib64/libprotobuf-cpp-full-vendor-3.9.1.so
+
 # Charger
 WITH_LINEAGE_CHARGER := false
 
@@ -96,6 +99,7 @@ TARGET_SCREEN_DENSITY := 400
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
+TARGET_LD_SHIM_LIBS += /vendor/bin/hw/android.hardware.drm@1.3-service.clearkey|/vendor/lib64/libprotobuf-cpp-full-vendor-3.9.1.so
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
