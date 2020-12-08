@@ -26,4 +26,7 @@
     <dimen name="status_bar_height_portrait">56px</dimen>
     <dimen name="status_bar_height_landscape">24dp</dimen>
 
+    <!-- Status bar icons size-->
+    <dimen name="status_bar_icon_size">19dip</dimen>
+
 </resources>
