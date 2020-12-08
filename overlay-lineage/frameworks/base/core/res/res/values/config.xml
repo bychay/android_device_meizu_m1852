@@ -77,6 +77,9 @@
         Z
     </string>
 
+    <!-- Status bar qs offset-->
+    <dimen name="quick_qs_offset_height">56px</dimen>
+
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">32</integer>
     <!-- Minimum screen brightness setting allowed by the power manager.
