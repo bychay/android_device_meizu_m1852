@@ -25,6 +25,7 @@ $(call inherit-product, device/meizu/m1852/m1852.mk)
 # Project Sakura
 SAKURA_MAINTAINER=MisterZtr
 SAKURA_BUILD_TYPE=basicgapps
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
