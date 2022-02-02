@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2018 The MoKee Open Source Project
+# Copyright (C) 2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,6 +26,10 @@ TARGET_BOOT_ANIMATION_RES := 1080
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Sakura Flags
+SAKURA_MAINTAINER := MisterZtr
+SAKURA_BUILD_TYPE=basicgapps
 
 # And credits to XiNGRZ again
 
