@@ -10,11 +10,6 @@ persist.sys.job_delay=true
 persist.sys.offlinelog.kernel=false
 persist.sys.offlinelog.logcat=false
 
-# VNDK30 FOR A12.1 OPTIMIZATION
-#ro.vendor.build.version.release=12
-#ro.vendor.build.version.release_or_codename=12
-#ro.vendor.build.version.sdk=32
-
 # Audio Settings
 af.fast_track_multiplier=1
 audio.deep_buffer.media=true
