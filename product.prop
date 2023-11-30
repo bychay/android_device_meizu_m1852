@@ -1,4 +1,19 @@
+#
+# from device/meizu/m1852/product.prop
+#
 # Blurs
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.surface_flinger.supports_background_blur=1 \
-    persist.sys.sf.disable_blurs=1
+ro.surface_flinger.supports_background_blur=1
+persist.sys.sf.disable_blurs=1
+persist.sys.sf.blur.fps=60
+persist.sys.sf.blur.type=progress
+persist.sys.static_blur_mode=true
+persist.perf.wm_static_blur=true
+sys.vendor.shutdown.waittime=500
+
+# Overlay fix
+ro.boot.vendor.overlay.static=false
+
+# Gboard corner fix
+ro.com.google.ime.corner_key_r=30
+
+# end of device/meizu/m1852/product.prop
