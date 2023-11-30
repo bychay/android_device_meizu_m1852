@@ -27,23 +27,19 @@ TARGET_BOOT_ANIMATION_RES := 1080
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Sakura Flags
-SAKURA_MAINTAINER := MisterZtr
-SAKURA_BUILD_TYPE=basicgapps
-
 # And credits to XiNGRZ again
 
 PRODUCT_NAME := lineage_m1852
-PRODUCT_BRAND := Meizu
-PRODUCT_DEVICE := m1852
-PRODUCT_MANUFACTURER := Meizu
-PRODUCT_MODEL := X8
+PRODUCT_BRAND := meizu
+PRODUCT_DEVICE := M1852
+PRODUCT_MANUFACTURER := meizu
+PRODUCT_MODEL := M1852
 
 PRODUCT_GMS_CLIENTID_BASE := android-meizu
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="M1852" \
-    PRODUCT_NAME="meizu_M1852_CN" \
+    PRODUCT_NAME="lineage_m1852" \
     PRIVATE_BUILD_DESC="meizu_M1852_CN-user 8.1.0 OPM1.171019.026 1592244368 release-keys"
 
 BUILD_FINGERPRINT := Meizu/meizu_M1852_CN/M1852:8.1.0/OPM1.171019.026/1592244368:user/release-keys
