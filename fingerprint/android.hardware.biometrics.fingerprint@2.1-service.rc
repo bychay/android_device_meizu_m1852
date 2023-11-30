@@ -1,0 +1,84 @@
+#
+# re optimized fingerprint hal for meizu X8
+# by bychay
+#
+
+on init
+    # Goodix fingerprint
+    chown system system /dev/goodix_fp
+
+    # Synaptics fingerprint
+    chown system system /dev/vfsspi
+
+on boot
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq_enable
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/wakeup_enable
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/hw_reset
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/device_prepare
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/fingerdown_wait
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/vendor
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/regulator_enable
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/screen_status
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/vreg_op_cnt
+
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/irq
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/wakeup_enable
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/hw_reset
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/device_prepare
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/vendor
+    chmod 0660 /sys/bus/platform/devices/soc:fingerprint_fpc/regulator_enable
+    chmod 0660 /sys/bus/platform/devices/soc:fingerprint_fpc/screen_status
+    chmod 0660 /sys/bus/platform/devices/soc:fingerprint_fpc/vreg_op_cnt
+
+    chown system system /sys/devices/platform/soc/soc:fingerprint_goodix/proximity_state
+
+    chmod 0666 /dev/input/event2
+
+on post-fs-data
+    mkdir /data/vendor/fpc 0770 system system
+    mkdir /data/vendor/goodix 0770 system system
+    mkdir /data/vendor/goodix/gf_data/authenticate 0770 system system
+    mkdir /data/vendor/goodix/gf_data/enroll 0770 system system
+    mkdir /data/vendor/syna 0770 system system
+    mkdir /data/vendor/syna/ist/ 0770 system system
+    chown system system /data/vendor
+
+    #Create directories for Fingerprint
+    mkdir /data/vendor/misc/qti_fp 0770 system system
+    mkdir /data/vendor/misc/qti_fp/bg_estimation 0770 system system
+    mkdir /data/vendor/misc/qti_fp/calib_test 0770 system system
+    mkdir /data/vendor/misc/qti_fp/database 0770 system system
+
+service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+    interface android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint default
+    class late_start
+    user system
+    group system input uhid
+#    writepid /dev/cpuset/system-background/tasks
+
+on fs
+    chown system system /dev/sunwave_fp
+    chmod 664 /dev/sunwave_fp
+
+service vendor.sw.swfingerprint_hal /vendor/bin/hw/vendor.sw.swfingerprint@1.0-service
+    interface vendor.sw.swfingerprint@1.0::ISwfingerprint default
+    class late_start
+    user system
+    group system
+
+on boot
+#for goodix_fp.
+    chown system system /dev/goodix_fp
+
+#for egis fp
+    chown system system /dev/esfp0
+
+on post-fs-data
+    mkdir /data/vendor/fpc 0770 system system
+    mkdir /data/vendor/goodix 0770 system system
+    chown system system /data/vendor
+    chgrp system system /data/vendor
+
+on property:vendor.fps_hal.restartimes=max
+    stop vendor.fps_hal
