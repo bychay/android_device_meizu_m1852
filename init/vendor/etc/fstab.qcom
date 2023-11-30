@@ -44,7 +44,7 @@
 /dev/block/bootdevice/by-name/misc                      /misc                 emmc    defaults                                            defaults
 
 #flyme custom partition
-/dev/block/bootdevice/by-name/custom                    /vendor/custom        ext4    nosuid,noatime,nodev,barrier=1                      wait
+/dev/block/bootdevice/by-name/custom                    /custom               ext4    nosuid,noatime,nodev,barrier=1                      wait
 
 #usb otg
 /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.*.auto*     /storage/usbotg   vfat    nosuid,nodev    wait,voldmanaged=usbotg:auto
