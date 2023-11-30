@@ -1,0 +1,18 @@
+on boot
+    # FPC Fingerprint fix vndk full
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/cdfinger,irq_gpio
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/cdfinger,pwr_gpio
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/cdfinger,reset_gpio
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/compatible
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/interrupt-parent
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/interrupts
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/name
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/pinctrl-0
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/pinctrl-1
+    chown system system /sys/bus/platform/devices/of_node/soc:cdfinger_fp/pinctrl-names
+
+    # sunwave Fingerprint fix vndk full
+    chown system system /dev/sunwave_fp
+    chmod 0666 /dev/sunwave_fp
+    chown system system /dev/fpsdev0
+    chmod 0666 /dev/fpsdev0
